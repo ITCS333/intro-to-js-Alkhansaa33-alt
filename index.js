@@ -1,49 +1,48 @@
-
-
-/**
- * @param {number} a The first number.
- * @param {number} b The second number.
- * @returns {number} The sum of a and b.
- */
 function sum(a, b) {
   return a + b;
 }
 
-/**
- * @param {string} str The string to reverse.
- * @returns {string} The reversed string.
- */
 function reverseString(str) {
-  return str.split('').reverse().join('');
+  let result = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    result += str[i];
+  }
+  return result;
 }
 
-/**
- * @param {number[]} numbers An array of numbers.
- * @returns {number} The largest number in the array. Return null if the array is empty.
- */
 function findLargest(numbers) {
   if (numbers.length === 0) return null;
-  return Math.max(...numbers);
+
+  let max = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+  return max;
 }
 
-/**
- * @param {string} str The string to check.
- * @returns {boolean} True if the string is a palindrome, false otherwise.
- */
 function isPalindrome(str) {
-  const normalized = str.toLowerCase();
-  return normalized === normalized.split('').reverse().join('');
+  let s = str.toLowerCase();
+  let reversed = "";
+
+  for (let i = s.length - 1; i >= 0; i--) {
+    reversed += s[i];
+  }
+
+  return s === reversed;
 }
 
-/**
- * @param {number[]} numbers An array of numbers.
- * @returns {number[]} A new array containing only the even numbers.
- */
 function filterEvenNumbers(numbers) {
-  return numbers.filter(num => num % 2 === 0);
+  let result = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+      result.push(numbers[i]);
+    }
+  }
+  return result;
 }
 
-// Do not edit the line below.
 module.exports = {
   sum,
   reverseString,
