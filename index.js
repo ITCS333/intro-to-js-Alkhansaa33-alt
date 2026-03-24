@@ -1,3 +1,10 @@
+
+
+/**
+ * @param {number} a The first number.
+ * @param {number} b The second number.
+ * @returns {number} The sum of a and b.
+ */
 function sum(a, b) {
   return a + b;
 }
@@ -24,7 +31,23 @@ function findLargest(numbers) {
  * @returns {boolean} True if the string is a palindrome, false otherwise.
  */
 function isPalindrome(str) {
-  const cleaned = str.toLowerCase();
-  const reversed = cleaned.split('').reverse().join('');
-  return cleaned === reversed;
+  const normalized = str.toLowerCase();
+  return normalized === normalized.split('').reverse().join('');
 }
+
+/**
+ * @param {number[]} numbers An array of numbers.
+ * @returns {number[]} A new array containing only the even numbers.
+ */
+function filterEvenNumbers(numbers) {
+  return numbers.filter(num => num % 2 === 0);
+}
+
+// Do not edit the line below.
+module.exports = {
+  sum,
+  reverseString,
+  findLargest,
+  isPalindrome,
+  filterEvenNumbers,
+};
